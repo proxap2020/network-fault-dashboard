@@ -1,0 +1,101 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #0f1117;
+  color: #e5e7eb;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.dashboard {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+}
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 1.1rem;
+}
+.error { color: #ef4444; padding: 0 40px; text-align: center; }
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.kpi-card {
+  background: #1a1d27;
+  border: 1px solid #2a2e3a;
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+}
+.kpi-value { font-size: 1.8rem; font-weight: 700; color: #818cf8; }
+.kpi-label { font-size: 0.8rem; color: #9ca3af; margin-top: 4px; }
+
+.charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.chart-card {
+  background: #1a1d27;
+  border: 1px solid #2a2e3a;
+  border-radius: 10px;
+  padding: 16px;
+}
+.chart-card h3 { margin: 0 0 8px 0; font-size: 0.95rem; color: #d1d5db; }
+.full-width { margin-bottom: 24px; }
+
+.table-section {
+  background: #1a1d27;
+  border: 1px solid #2a2e3a;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.table-header h3 { margin: 0; font-size: 0.95rem; }
+
+select {
+  background: #0f1117;
+  color: #e5e7eb;
+  border: 1px solid #2a2e3a;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #2a2e3a; }
+th { color: #9ca3af; font-weight: 600; }
+
+.badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: #0f1117;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .kpi-row { grid-template-columns: repeat(2, 1fr); }
+  .charts-row { grid-template-columns: 1fr; }
+}
