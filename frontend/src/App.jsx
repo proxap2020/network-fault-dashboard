@@ -6,7 +6,7 @@ import {
 import "./App.css";
 
 // Change this if your backend runs on a different port/host
-const API_BASE = "http://localhost:8000";
+const API_BASE = "https://network-fault-dashboard.onrender.com";
 
 const SEVERITY_COLORS = {
   Low: "#4ade80",
