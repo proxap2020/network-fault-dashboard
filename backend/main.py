@@ -16,12 +16,17 @@ import numpy as np
 
 app = FastAPI(title="Network Fault Dashboard API")
 
-# Allow the React frontend (running on a different port) to call this API.
-# In production, replace "*" with your actual frontend domain.
+# Only allow requests from our actual frontend(s) — not the entire internet.
+# Add any other domains here if you set up a custom domain later.
+ALLOWED_ORIGINS = [
+    "https://network-fault-dashboard.vercel.app",  # deployed frontend
+    "http://localhost:5173",                       # local dev (Vite default port)
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
+    allow_origins=ALLOWED_ORIGINS,
+    allow_methods=["GET"],   # this API is read-only, so no need to allow POST/PUT/DELETE
     allow_headers=["*"],
 )
 
@@ -209,4 +214,3 @@ def filter_options():
         "device_types": sorted(df["device_type"].dropna().unique().tolist()),
         "locations": sorted(df["location"].dropna().unique().tolist()),
     }
-
